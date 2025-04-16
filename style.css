@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    color : green;
+}
+button{
+    border-radius: 25%;
+}
+
+h1{
+    color:green;
+    font-family: Bahnschrift;
+    text-align: center;
+}
