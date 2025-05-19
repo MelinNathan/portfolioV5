@@ -1,54 +1,95 @@
-import * as math from 'math.js' ;
+curveSelection1 = document.getElementById('curveSelection1')
+curveSelection2 = document.getElementById('curveSelection2')
 
-const ctx = document.getElementById('canvas');
-console.log(math.facto(5))
-function curve(data){
-    new Chart(ctx,{
-        type: type,
-
-    })
-}
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1,
-      borderColor : "#FF0000"
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
+curveSelection1.addEventListener('change', function () {
+    const selection = curveSelection1.value;
+    const color = 'blue';
+    switch (selection) {
+        case 'exponential':
+            drawExpo(color);
+            break;
+        case 'facto':
+            drawFacto(color);
+            break;
+        case 'normale':
+            drawNormale(color);
+            break;
     }
-  }
-});
+})
 
-// function draw() {
-//     offsetX = 25;
-//     offsetY = 25;
-//     const canvas = document.getElementById("canvas");
-//     if (canvas.getContext) {
-//         const ctx = canvas.getContext("2d");
-//         ctx.beginPath();
-        
+curveSelection2.addEventListener('change', function () {
+    const selection = curveSelection2.value;
+    const color = 'red';
+    switch (selection) {
+        case 'exponential':
+            drawExpo(color);
+            break;
+        case 'facto':
+            drawFacto(color);
+            break;
+        case 'normale':
+            drawNormale(color);
+            break;
+    }
+})
 
-//         ctx.strokeStyle = "blue";
-//         x=0;
-//         for (y = 50; y <= 100; y++) {
-              
-//                 ctx.lineTo(x, y); 
-//                 x++;
-            
-//         }
-//         ctx.stroke();
-//     }
-// }
+function drawFacto(color) {
+    const canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+        ctx.beginPath();
 
 
-// draw()
+        ctx.strokeStyle = color;
+        x = 0;
+        for (y = 0; y <= 100; y++) {
 
+            ctx.lineTo(x, facto(y) * -1 + 600);
+            x += 3;
+
+        }
+        ctx.stroke();
+    }
+}
+
+function drawExpo(color) {
+    const canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+        ctx.beginPath();
+
+
+        ctx.strokeStyle = color;
+        x = 0;
+        for (y = 0; y <= 100; y++) {
+
+            ctx.lineTo(x, Math.exp(y) * -1 + 600);
+            // ctx.lineTo(x,Math.tan(y)*5+300); 
+            x += 3;
+
+        }
+        ctx.stroke();
+    }
+}
+
+
+function drawNormale(color) {
+    const canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+        ctx.beginPath();
+
+
+        ctx.strokeStyle = color;
+        x = 0;
+        for (y = -100; y <= 100; y++) {
+
+            ctx.lineTo(x, normalDistrib(y) * -1000 + 600);
+            // ctx.lineTo(x,Math.tan(y)*5+300); 
+            console.log(Math.sin(y) * Math.cos(y) * 100)
+            x += 3;
+
+        }
+        ctx.stroke();
+    }
+}

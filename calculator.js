@@ -1,3 +1,5 @@
+//Factp Input
+
 const factoInput = document.getElementById('facto')
 const factoResult = document.getElementById('factoResult');
 
@@ -6,23 +8,11 @@ factoInput.addEventListener('input', function () {
     factoResult.textContent = facto(n);
 });
 
-function facto(n) {
-    if (!isNaN(n) && n >= 0) {
-        let result = 1;
-        for (let i = n; i > 0; i--) {
-            result *= i;
-        }
-        return result
-
-    } else {
-        return 'waiting input';
-    }
-}
-
+//POWER INPUT
 
 const powerP = document.getElementById('powerBase')
 const powerN = document.getElementById('powerExpo')
-// const powerResult = document.getElementById('powerResult');
+const powerResult = document.getElementById('powerResult');
 
 powerP.addEventListener('input', function () {
     const p = parseInt(powerP.value);
@@ -35,19 +25,7 @@ powerN.addEventListener('input', function () {
     powerResult.textContent = power(p, n)
 })
 
-function power(p, n) {
-    if (!isNaN(n) && !isNaN(p)) {
-
-        if (n == 0) {
-            powerResult.textContent = 0;
-        }
-        let result = Math.pow(p, n)
-        return result;
-
-    } else {
-        return 'waiting input';
-    }
-}
+//PERMUTATION INPUT
 
 permN = document.getElementById('permN')
 permK = document.getElementById('permK')
@@ -63,19 +41,3 @@ permK.addEventListener('input', function () {
     const k = parseInt(permK.value);
     permResult.textContent = permutation(n, k)
 })
-
-function permutation(n, k) {
-
-    if (!isNaN(n) && !isNaN(k)) {
-        if (n < k) {
-            return 'n can\'t be less than k'
-
-        } else {
-            let result = facto(n) / facto(n - k);
-            return result;
-        }
-    }
-    else {
-        return 'waiting input';
-    }
-}

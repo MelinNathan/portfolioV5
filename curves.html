@@ -4,14 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="style.css" rel="stylesheet" /> -->
+    <link href="style.css" rel="stylesheet" />
     <title>Curves</title>
 </head>
 
 <body>
-    <canvas id="canvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
+    <label for="curveSelection1">Choose Curve 1 :</label>
+    <select id="curveSelection1">
+        <option selected="selected" disabled value="">--Choose a curve--</option>
+        <option value="normale">Loi Normale</option>
+        <option value="facto">Facto</option>
+        <option value="exponential">Exponential</option>
+    </select>
+    <label for="curveSelection2">Choose Curve 1 :</label>
+    <select id="curveSelection2">
+        <option selected="selected" disabled value="">--Choose a curve--</option>
+        <option value="normale">Loi Normale</option>
+        <option value="facto">Facto</option>
+        <option value="exponential">Exponential</option>
+    </select>
+    </br>
+    <canvas id="canvas" width="600" height="600" style="border:1px solid #FFFFFF;"></canvas>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="mathFunc.js"></script>
 <script src="curves.js"></script>
 
 </html>
