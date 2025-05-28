@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" />
-    <title>Accueil</title>
-</head>
+<!-- navbar + doctype -->
+<?php include 'views/v_navbar.php' ?>
 
 <body>
     <h1>Nathan Melin</h1>
@@ -32,14 +25,14 @@
         <label id="permResult">waiting input</label>
     </div>
     </br>
-    <div>
+    <!-- <div>
         <label for="binCoef">Binomial Coefficient : </label>
         <input type="number" id="permN" placeholder="n" />
         <input type="number" id="permK" placeholder="k" />
         <label id="permResult">waiting input</label>
-    </div>
+    </div> -->
 </body>
-<script src="calculator.js"></script>
-<script src="mathFunc.js"></script>
 
-</html>
+
+<!-- footer -->
+<?php include 'views/v_footer.php' ?>

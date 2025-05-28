@@ -1,5 +1,3 @@
-
-
 function facto(n) {
     if (!isNaN(n) && n >= 0) {
         let result = 1;
@@ -12,9 +10,6 @@ function facto(n) {
         return 'waiting input';
     }
 }
-
-
-
 
 function power(p, n) {
     if (!isNaN(n) && !isNaN(p)) {
@@ -29,8 +24,6 @@ function power(p, n) {
         return 'waiting input';
     }
 }
-
-
 
 function permutation(n, k) {
 

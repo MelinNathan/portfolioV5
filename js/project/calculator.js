@@ -1,4 +1,4 @@
-//Factp Input
+//FACTO INPUT
 
 const factoInput = document.getElementById('facto')
 const factoResult = document.getElementById('factoResult');
